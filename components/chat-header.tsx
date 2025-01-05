@@ -13,6 +13,21 @@ import { memo } from 'react';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import { VisibilityType, VisibilitySelector } from './visibility-selector';
 
+export const GEMINI_MODELS = [
+  {
+    id: 'gemini-pro',
+    name: 'Gemini Pro',
+    description: 'Most capable Gemini model for text generation',
+    apiIdentifier: 'gemini-pro'
+  },
+  {
+    id: 'gemini-pro-vision',
+    name: 'Gemini Pro Vision',
+    description: 'Best for tasks involving images and text',
+    apiIdentifier: 'gemini-pro-vision'
+  }
+];
+
 function PureChatHeader({
   chatId,
   selectedModelId,
@@ -56,6 +71,7 @@ function PureChatHeader({
         <ModelSelector
           selectedModelId={selectedModelId}
           className="order-1 md:order-2"
+          models={GEMINI_MODELS}
         />
       )}
 
